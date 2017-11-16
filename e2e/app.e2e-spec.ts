@@ -1,10 +1,10 @@
-import { SiteClubCycloPage } from './app.po';
+import { AppPage } from './app.po';
 
-describe('site-club-cyclo App', () => {
-  let page: SiteClubCycloPage;
+describe('test-ng App', () => {
+  let page: AppPage;
 
   beforeEach(() => {
-    page = new SiteClubCycloPage();
+    page = new AppPage();
   });
 
   it('should display welcome message', () => {
