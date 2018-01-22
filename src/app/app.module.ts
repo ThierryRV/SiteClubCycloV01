@@ -17,9 +17,14 @@ import { PhotosComponent } from './components/photos/photos.component';
 import { MembresComponent } from './components/membres/membres.component';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { SortiesMensuellesInMemoryDataService } from './services/sorties-mensuelles-in-memory-data.service';
-import { EvenementsInMemoryDataService } from './services/evenements-in-memory-data.service';
+import { DatabaseInMemoryDbService } from './services/database-in-memory-data.service';
 import { EvenementsService } from './services/evenements.service';
+import { MenuMainComponent } from './components/menu/menu-main/menu-main.component';
+import { MenuItemComponent } from './components/menu/menu-item/menu-item.component';
+import { MenusService } from './services/menus.service';
+import { SortiesMensuellesService } from './services/sorties-mensuelles.service';
+import { ContentComponent } from './components/content/content.component';
+import { ContentLeftComponent } from './components/content-left/content-left.component';
 
 
 @NgModule({
@@ -30,7 +35,11 @@ import { EvenementsService } from './services/evenements.service';
     ActualitesComponent,
     DocumentsComponent,
     PhotosComponent,
-    MembresComponent
+    MembresComponent,
+    MenuMainComponent,
+    MenuItemComponent,
+    ContentComponent,
+    ContentLeftComponent
   ],
   imports: [
     BrowserModule,
@@ -39,16 +48,16 @@ import { EvenementsService } from './services/evenements.service';
     HttpClientModule,
     MDBBootstrapModules.forRoot(),
     AgmCoreModule.forRoot({ apiKey: 'AIzaSyB8iupvnjV-Xn98b0Smx88xR881UY5PU7k'}),
-    RouterModule.forRoot(ROUTES),
-    HttpClientInMemoryWebApiModule.forRoot(SortiesMensuellesInMemoryDataService),
-    HttpClientInMemoryWebApiModule.forRoot(EvenementsInMemoryDataService)
+    HttpClientInMemoryWebApiModule.forRoot(DatabaseInMemoryDbService),
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [
     MDBSpinningPreloader,
-    EvenementsService
+    EvenementsService,
+    SortiesMensuellesService,
+    MenusService
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-

@@ -31,8 +31,8 @@ class EvenementEnumItem {
 }
 
 const EvenemenEnumItems = {
-  '1-SortieClub': new EvenementEnumItem(1, 'SortieClub', 'Sortie Club'),
-  '2-Randonnee': new EvenementEnumItem(2, 'Randonnee', 'Randonnée'),
+  '1-SortieClub': new EvenementEnumItem(1, 'SortieClub', 'SortieModel Club'),
+  '2-Randonnee': new EvenementEnumItem(2, 'RandonneeModel', 'Randonnée'),
   '3-ReunionClub': new EvenementEnumItem(3, 'ReunionClub', 'Réunion Club'),
   '4-ReunionCodep': new EvenementEnumItem(4, 'ReunionCodep', 'Réunion Codep'),
   '5-WeekEndClub': new EvenementEnumItem(5, 'WeekEndClub', 'Week-End Club')

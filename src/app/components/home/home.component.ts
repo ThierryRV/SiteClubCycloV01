@@ -1,52 +1,57 @@
 import { Component, OnInit } from '@angular/core';
-import {EvenementsService} from '../../services/evenements.service';
-import { Observable } from 'rxjs/Observable';
-import {Evenement} from '../../datas/models/evenement';
-import {Subject} from 'rxjs/Subject';
+import { EvenementsService } from '../../services/evenements.service';
+import { EvenementModel } from '../../datas/models/evenement.model';
+import { SortieModel } from '../../datas/models/sortie.model';
+import { MenuMainModel } from '../../datas/models/menu.main.model';
+import { SortiesMensuellesService } from '../../services/sorties-mensuelles.service';
+import { MenusService } from '../../services/menus.service';
 
 @Component({
-  selector: 'app-home',
+  selector: 'ccc-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
 
-  private searchTerms = new Subject();
-  evenements: Array<Evenement>;
+  evenements: Array<EvenementModel>;
+  sorties: Array<SortieModel>;
+  menus: Array<MenuMainModel>;
 
-  constructor(private evenementsService: EvenementsService) { }
-
-  // Ajoute un terme de recherche dans le flux de l'Observable 'searchTerms'
-  search(term: string): void {
-    console.log(term);
-    this.searchTerms.next(term);
-  }
+  constructor(
+    private evenementsService: EvenementsService,
+    private sortiesService: SortiesMensuellesService,
+    private menusService: MenusService) { }
 
   ngOnInit(): void {
-    this.evenementsService.list().subscribe(datas => {
-      console.log(datas);
-      this.evenements = datas;
-    });
-  }
-
-
-/*
-  ngOnInitBis(): void {
-    console.log(this.searchTerms);
-    this.evenements = this.searchTerms
-    // attendre 300 ms de pause entre chaque rtequête
-      .debounceTime(300)
-      // ignorer la recherche en cours si c'est la même que la précédente
-      .distinctUntilChanged()
-      .switchMap((term: string) => {
-          return term ? this.evenementsService.search(term) : Observable.of([]);
-        }
-      )
-      .catch((error: any) => {
-        console.log(error);
-        // en cas d'erreur, on retourne un résultat vide
-        return Observable.of([]);
+    console.log('HomeComponent.ngOnInit()');
+    try {
+      this.evenementsService.list().subscribe(datas => {
+        console.log(datas);
+        this.evenements = datas;
       });
+    } catch (e) {
+      console.log(e);
+      this.evenements = [];
+    }
+
+    try {
+      this.sortiesService.list().subscribe(datas => {
+        console.log(datas);
+        this.sorties = datas;
+      });
+     } catch (e) {
+        console.log(e);
+       this.sorties = [];
+     }
+
+    try {
+      this.menusService.list().subscribe(datas => {
+        console.log(datas);
+        this.menus = datas;
+      });
+    } catch (e) {
+      console.log(e);
+      this.menus = [];
+    }
   }
-*/
 }

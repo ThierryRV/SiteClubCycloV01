@@ -1,8 +1,7 @@
-import { Evenement } from '../models/evenement';
-import {Time} from '@angular/common';
+import { EvenementModel } from '../models/evenement.model';
 import {EvenementEnum} from '../enums/evenement.enum';
 
-export const EVENEMENTS: Evenement[] = [
+export const EVENEMENTS: EvenementModel[] = [
   {
     '_id': 'EVT-2017-11-001',
     'date_evenement': '2017-11-01 09:00:00',

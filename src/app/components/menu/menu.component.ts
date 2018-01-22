@@ -1,18 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { MenuMainModel } from '../../datas/models/menu.main.model';
+import { MenusService } from '../../services/menus.service';
 
 @Component({
-  selector: 'app-menu',
+  selector: 'ccc-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
 
-  navbarCollapsed = true;
+  menus: Array<MenuMainModel>;
 
-  constructor(private router: Router) { }
+  constructor(private menusService: MenusService) { }
 
   ngOnInit() {
+    this.menusService.list().subscribe(datas => {
+      console.log(datas);
+      this.menus = datas;
+    });
   }
 
 }
+
+
+
+
+

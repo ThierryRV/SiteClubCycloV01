@@ -1,8 +1,7 @@
 import { TestBed, inject } from '@angular/core/testing';
 import {EvenementEnumUtilities, EvenementEnum} from './evenement.enum';
-import {Evenement} from '../models/evenement';
 
-describe('Tests de l\'enum Evenement' , () => {
+describe('Tests de l\'enum EvenementModel' , () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: []
@@ -13,7 +12,7 @@ describe('Tests de l\'enum Evenement' , () => {
     expect(EvenementEnumUtilities.getCode(EvenementEnum.SortieClub)).toBe(1);
   }));
 
-  it('le code de EvenementEnum.Randonnee est 2', inject([], () => {
+  it('le code de EvenementEnum.RandonneeModel est 2', inject([], () => {
     expect(EvenementEnumUtilities.getCode(EvenementEnum.Randonnee)).toBe(2);
   }));
 
@@ -33,8 +32,8 @@ describe('Tests de l\'enum Evenement' , () => {
     expect(EvenementEnumUtilities.getSymbole(EvenementEnum.SortieClub)).toBe('SortieClub');
   }));
 
-  it('le symbol du EvenementEnum.Randonnee est Randonnee', inject([], () => {
-    expect(EvenementEnumUtilities.getSymbole(EvenementEnum.Randonnee)).toBe('Randonnee');
+  it('le symbol du EvenementEnum.RandonneeModel est RandonneeModel', inject([], () => {
+    expect(EvenementEnumUtilities.getSymbole(EvenementEnum.Randonnee)).toBe('RandonneeModel');
   }));
 
   it('le symbol du EvenementEnum.ReunionClub est ReunionClub', inject([], () => {
@@ -49,11 +48,11 @@ describe('Tests de l\'enum Evenement' , () => {
     expect(EvenementEnumUtilities.getSymbole(EvenementEnum.WeekEndClub)).toBe('WeekEndClub');
   }));
 
-  it('le libelle du EvenementEnum.SortieClub est Sortie Club', inject([], () => {
-    expect(EvenementEnumUtilities.getLibelle(EvenementEnum.SortieClub)).toBe('Sortie Club');
+  it('le libelle du EvenementEnum.SortieClub est SortieModel Club', inject([], () => {
+    expect(EvenementEnumUtilities.getLibelle(EvenementEnum.SortieClub)).toBe('SortieModel Club');
   }));
 
-  it('le libelle du EvenementEnum.Randonnee est Randonnée', inject([], () => {
+  it('le libelle du EvenementEnum.RandonneeModel est Randonnée', inject([], () => {
     expect(EvenementEnumUtilities.getLibelle(EvenementEnum.Randonnee)).toBe('Randonnée');
   }));
 

@@ -1,8 +1,7 @@
-import { Sortie } from '../models/sortie';
-import {Time} from '@angular/common';
+import { SortieModel } from '../models/sortie.model';
 import {GroupeEnum} from '../enums/groupe.enum';
 
-export const SORTIES_MENSUELLES: Sortie[] = [
+export const SORTIES_MENSUELLES: SortieModel[] = [
   {
     '_id': 'SOR-2017-11-001',
     'date_sortie': '2017-11-01 09:00:00',

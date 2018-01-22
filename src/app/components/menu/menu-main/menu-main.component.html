@@ -1,0 +1,11 @@
+<li class="nav-item dropdown" dropdown>
+  <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-light">
+   <span class="fa {{ main.icone}}"></span>&nbsp; {{main.name}}<span class="caret"></span>
+  </a>
+  <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+    <div>
+      <ccc-menu-item *ngFor='let item of main.items' [item]="item"></ccc-menu-item>
+    </div>
+  </div>
+</li>
+
