@@ -4,37 +4,37 @@ export const MENUS: MenuMainModel[] = [
   {
     '_id': 'MNM-2017-11-001',
     'name': 'Accueil',
-    'icone': '',
+    'icone': 'fa-home',
     'order': 1,
     'items': [
       {
         '_id': 'MNI-2017-11-001',
         'name': 'Détail mises à jour',
-        'icone': '',
+        'icone': 'fa-home',
         'order': 1
       },
       {
         '_id': 'MNI-2017-11-002',
         'name': 'Liens utiles',
-        'icone': '',
+        'icone': 'fa-home',
         'order': 2
       },
       {
         '_id': 'MNI-2017-11-003',
         'name': 'Ecrivez-nous',
-        'icone': '',
+        'icone': 'fa-home',
         'order': 3
       },
       {
         '_id': 'MNI-2017-11-004',
         'name': 'Separator',
-        'icone': '',
+        'icone': 'fa-home',
         'order': 4
       },
       {
         '_id': 'MNI-2017-11-005',
         'name': 'Mentions légales',
-        'icone': '',
+        'icone': 'fa-home',
         'order': 5
       }
     ]

@@ -1,6 +1,6 @@
 <div *ngIf="item.name !== 'Separator'; then thenBlock else elseBlock"></div>
-<ng-template #thenBlock>.
-  <a class="dropdown-item waves-light" mdbRippleRadius href="#"><span class="fa {{item.icone}} fa-fw"></span>&nbsp; {{item.name}}</a>
+<ng-template #thenBlock>
+  <a class="dropdown-item waves-light" href="#"><span class="fa {{item.icone}} fa-fw"></span>&nbsp; {{item.name}}</a>
 </ng-template>
 <ng-template #elseBlock>
   <div class="divider dropdown-divider"></div>
